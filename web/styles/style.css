@@ -1,0 +1,690 @@
+@font-face{
+	font-family:"CourierNewBold";
+	src: url("courbd-webfont.eot");
+	src: url("courbd-webfont.eot?#iefix") format("embedded-opentype"),
+		url("courbd-webfont.woff") format("woff"),
+		url("courbd-webfont.ttf") format("truetype"),
+		url("courbd-webfont.svg#CourierNewBold") format("svg");	 
+	font-weight: normal;
+	font-style: normal;
+}
+
+*{
+	padding:0;
+	margin:0;
+	border:none;
+}
+
+body{
+}
+
+label.error{ display:none !important; }
+input.error, select.error{ border:solid 1px #F00 !important; }
+.not-visible{ display:none; }
+
+a{ cursor:pointer; position:relative; z-index:200; }
+
+.bg-home{
+	background:url("images/bg-home.jpg") no-repeat top center;
+}
+.bg-ciudades{
+	background:url("images/bg-ciudades.jpg") no-repeat top center;
+}
+
+#nav{
+	background:url("images/bg-nav-home.png") no-repeat 0 0;
+	height:44px;
+	list-style:none;
+	position:absolute;
+	text-align:left;
+	top:0;
+	right:0;
+	width:420px; /* 551px */
+}
+	.nav2{
+		background:url("images/bg-nav-ciudades.png") no-repeat 0 0 !important;
+		width:727px !important;
+	}
+	#nav li, #nav li a{
+		float:left;
+		height:13px;
+	}
+		#nav li a{
+			background-repeat:no-repeat !important;
+			margin:7px 0 0 20px;
+			text-decoration:none;
+		}
+		#nav li a:hover{
+			background-position:0 -13px;
+		}
+			#nav li a.btn-nav-cerrarsesion{
+				background-image:url("images/bg-nav-cerrarsesion.gif");
+				margin-left:20px;
+				width:104px;
+			}
+			#nav li a.btn-nav-premios{
+				background-image:url("images/bg-nav-premios.gif");
+				width:62px;
+			}
+			#nav li a.btn-nav-ranking{
+				background-image:url("images/bg-nav-ranking.gif");
+				width:63px;
+			}
+			#nav li a.btn-nav-recomienda{
+				background-image:url("images/bg-nav-recomienda.gif");
+				width:83px;
+			}
+			#nav li a.btn-nav-instrucciones{
+				background-image:url("images/bg-nav-instrucciones.gif");
+				width:104px;
+			}
+			#nav li a.btn-nav-basespromocion{
+				background-image:url("images/bg-nav-basespromocion.gif");
+				width:155px;
+			}
+
+#min{
+	display:block;
+	height:auto;
+	position:absolute;
+	bottom:50px;
+	left:15px;
+	width:10px;
+}
+#elementos-militares{
+	background:url("images/img-elementos-militares.png") no-repeat 0 0;
+	display:block;
+	height:479px;
+	position:absolute;
+	bottom:0;
+	left:0;
+	width:552px;
+}
+#demo{
+	background:url("images/bg-demo.png") no-repeat 0 0;
+	display:block;
+	height:358px;
+	position:absolute;
+	bottom:0;
+	right:0;
+	width:371px;
+}
+	#demo div a{ float:left; }
+	#demo .btn-demo-juega{
+		float:left;
+		height:121px;
+		margin:175px 0 0 -8px;
+		_margin-left:0;
+		position:relative;
+		overflow:hidden;
+		width:121px;
+		z-index:200;
+	}
+		#demo .btn-demo-juega a{
+			background:url("images/btn-demo-juega.png") no-repeat 0 0;
+			height:242px;
+			position:absolute;
+			width:121px;
+			z-index:9999;
+		}
+	#demo .btn-demo-recomienda, #demo .btn-demo-premios, #demo .btn-demo-ranking{
+		float:right;
+		height:79px;
+		margin:135px 60px 0 0;
+		position:relative;
+		overflow:hidden;
+		width:79px;
+		top:0;
+		left:0 !important;
+	}
+		#demo .btn-demo-recomienda a, #demo .btn-demo-premios a, #demo .btn-demo-ranking a{
+			background:url("images/btn-demo-recomienda.png") no-repeat 0 0;
+			height:158px;
+			position:absolute;
+			width:79px;
+		}
+	#demo .btn-demo-premios{
+		margin:210px -40px 0 0;
+	}
+		#demo .btn-demo-premios a{
+			background:url("images/btn-demo-premios.png") no-repeat 0 0;
+		}
+	#demo .btn-demo-ranking{
+		margin:-60px 180px 0 0;
+	}
+		#demo .btn-demo-ranking a{
+			background:url("images/btn-demo-ranking.png") no-repeat 0 0;
+		}
+#content-home{
+	background:url("images/bg-login.png") no-repeat 0 0;
+	height:432px;
+	width:660px;
+	top:50%;
+	left:43%;
+	position:absolute;
+	margin-top:-216px;
+	margin-left:-330px;
+}
+	#txtLogin{
+		float:left;
+		height:auto;
+		list-style:none;
+		margin:319px 0 0 255px;
+		width:382px;
+		
+	}
+		#txtLogin li{
+			float:left;
+			margin:0 0 0 5px;
+		}
+		#txtLogin li.contentDni{
+			float:right;
+		}
+		#txtLogin li.contentAll{
+			width:100%;
+		}
+			a.btnIngresar{
+				background:url("images/btn-ingresar.png") no-repeat 0 0;
+				float:left;
+				height:29px;
+				margin:20px 0 0 40px;
+				width:103px;
+			}
+			a.btnCompartirFb{
+				background:url("images/btn-compartir-fb.gif") no-repeat 0 0;
+				float:right;
+				height:18px;
+				width:82px;
+			}
+		.inputDiaMes, .inputDiaMes, .inputAnio, .inputDni{
+			background:url("images/bg-input.jpg") repeat-x top left;
+			border:solid 1px #B2B2B2;
+			color:#313a18;
+			float:left;
+			font:normal 16px Arial;
+			height:auto;
+			text-align:center;
+			width:35px;
+			padding:6px;
+		}
+		.inputAnio{
+			width:45px;
+		}
+		.inputDni{
+			text-align:left;
+			width:130px;
+		}
+#footer{
+	background:#000 url("images/bg-footer.gif") no-repeat top center;
+	display:block;
+	height:36px;
+	position:absolute;
+	bottom:0;
+	width:100%;
+}
+
+#logo{
+	background:url("images/logo-pilsen.png") no-repeat 0 0;
+	display:block;
+	height:105px;
+	left:43px;
+	position:absolute;
+	top:18px;
+	width:153px;
+	z-index:100;
+}
+#logo-buscando-galvez{
+	background:url("images/logo-pilsen-buscado-galvez.png") no-repeat 0 0;
+	display:block;
+	height:90px;
+	left:43px;
+	position:absolute;
+	top:18px;
+	width:387px;
+	z-index:100;
+}
+#contentRegistroForm{
+	/*margin:10% auto auto;*/
+	width:380px;
+	height:auto; /* 440px */
+	/*margin-top:-220px;*/
+	position:absolute;
+	top:50%;
+	left:50%;
+	margin:-220px 0 0 -190px;
+}
+	#contentRegistroForm img{
+		padding:5px 0
+	}
+.contentRegistro{
+	float:left;
+	height:auto;
+	list-style:none;
+	width:185px;
+}
+	.contentRegistro li{
+		float:left;
+		font:normal 14px Arial;
+		color:#0c0e0d;
+		padding:0 0 5px 0;
+		width:185px;
+		height:auto !important;
+		/*border-top:solid 1px #000;*/
+	}
+		.contentRegistro li.li100{
+			width:100%;
+		}
+			.inputText, select.inputSelect, a.ui-selectmenu{
+				background:url("images/bg-input.jpg") repeat-x top left;
+				border:solid 1px #B2B2B2;
+				color:#313a18;
+				float:left;
+				font:normal 16px Arial;
+				height:auto;
+				text-align:left;
+				width:137px;
+				padding:7px 6px 6px;
+			}
+				.inputTextDia{
+					width:30px;
+				}
+				.inputTextMes{
+					margin-left:2px;
+					width:30px;
+				}
+				.inputTextAnio{
+					margin-left:2px;
+					width:45px;
+				}
+			select.inputSelect{
+				padding:7px 6px 5px !important;
+				width:150px;
+			}
+			a.ui-selectmenu{
+				float:left;
+				background:url("images/bg-select.jpg") no-repeat 0 0 !important;
+				width:149px !important;
+				height:32px;
+				text-decoration:none;
+				padding:0 !important;
+			}
+			.ui-selectmenu-status{
+				float:left;
+				padding:6px;
+			}
+			a.btnTerminos{
+				font:bold 14px Arial;
+				color:#960802;
+				margin:0 0 0 15px;
+			}
+			a.btnGuardar, a.btnLimpiar, input.btnLimpiar{
+				float:left;
+				background:url("images/btn-guardar.png") no-repeat 0 0;
+				height:29px;
+				width:103px;
+				margin-left:55px;
+			}
+			a.btnLimpiar, input.btnLimpiar{
+				background:url("images/btn-limpiar.png") no-repeat 0 0;
+				margin-left:20px;
+			}
+			input.btnLimpiar{
+				padding-top:29px;
+				overflow:hidden;
+				cursor:pointer;
+			}
+
+#mapa{
+	display:block;
+	background:url("images/img-mapa.png") no-repeat 0 0 !important;
+	height:521px;
+	position:absolute;
+	top:50%;
+	left:45%;
+	width:373px;
+	margin:-260px 0 0 -186px;
+	z-index:100;
+}
+	.mapa-lima,
+	.mapa-cusco,
+	.mapa-pucallpa,
+	.mapa-iquitos,
+	.mapa-chiclayo,
+	.mapa-callao,
+	.mapa-final{
+		float:left;
+		width:373px;
+		height:521px;
+		background:url("images/img-mapa-lima.png") no-repeat 0 0;
+	}
+	.mapa-cusco{ background:url("images/img-mapa-cusco.png") no-repeat 0 0; }
+	.mapa-pucallpa{ background:url("images/img-mapa-pucallpa.png") no-repeat 0 0; }
+	.mapa-iquitos{ background:url("images/img-mapa-iquitos.png") no-repeat 0 0; }
+	.mapa-chiclayo{ background:url("images/img-mapa-chiclayo.png") no-repeat 0 0; }
+	.mapa-callao{ background:url("images/img-mapa-callao.png") no-repeat 0 0; }
+	.mapa-final{ background:url("images/img-mapa-final.png") no-repeat 0 0; }
+	
+#ciudad-descrip{
+	display:block;
+	position:absolute;
+	bottom:0;
+	right:0;
+}
+	#contentTime{
+		float:left;
+		width:290px;
+		height:auto;
+		font:normal 45px CourierNewBold;
+		color:#614f29;
+		text-align:center;
+		margin:130px 0 0 25px;
+	}
+	.descrip-lima{
+		background:url("images/img-descrip-lima.png") no-repeat 0 0 !important;
+		height:317px; /* 541px */
+		width:504px; /* 593px */
+		padding:224px 0 0 89px;
+	}
+	.descrip-cusco{
+		background:url("images/img-descrip-cusco.png") no-repeat 0 0 !important;
+		height:317px; /* 537px */
+		width:504px; /* 593px */
+		padding:220px 0 0 89px;
+	}
+	.descrip-pucallpa{
+		background:url("images/img-descrip-pucallpa.png") no-repeat 0 0 !important;
+		height:317px; /* 528px */
+		width:504px; /* 593px */
+		padding:211px 0 0 89px;
+	}
+	.descrip-iquitos{
+		background:url("images/img-descrip-iquitos.png") no-repeat 0 0 !important;
+		height:317px; /* 528px */
+		width:504px; /* 593px */
+		padding:211px 0 0 89px;
+	}
+	.descrip-chiclayo{
+		background:url("images/img-descrip-chiclayo.png") no-repeat 0 0 !important;
+		height:317px; /* 546px */
+		width:504px; /* 593px */
+		padding:229px 0 0 89px;
+	}
+	.descrip-callao{
+		background:url("images/img-descrip-callao.png") no-repeat 0 0 !important;
+		height:303px; /* 567px */
+		width:504px; /* 593px */
+		padding:264px 0 0 89px;
+	}
+	.descrip-final{
+		background:url("images/img-descrip-final.png") no-repeat 0 0 !important;
+		height:536px; /* 536px */
+		width:592px; /* 592px */
+	}
+	
+	a.btn-empieza-juego{
+		float:left;
+		background:url("images/btn-empieza.png") no-repeat 0 0 !important;
+		height:47px;
+		width:117px;
+	}
+	a.btn-mejora-tiempo{
+		position:absolute;
+		background:url("images/btn-mejora-tu-tiempo.png") no-repeat 0 0 !important;
+		height:36px;
+		width:187px;
+		top:206px;
+		left:68px;
+	}
+	a.btn-ver-ranking{
+		position:absolute;
+		background:url("images/btn-ver-ranking.png") no-repeat 0 0 !important;
+		height:50px;
+		width:135px;
+		top:245px;
+		left:93px;
+	}
+	
+
+
+/* popups */
+
+#wrapperPopup{
+	background:url("images/bg-popups.png") no-repeat 0 0 !important;
+	float:left;
+	height:569px;
+	width:732px;
+}
+	#wrapperPopup h1{
+		float:left;
+		color:#3e3114;
+		height:30px;
+		font:normal 26px CourierNewBold;
+		margin:70px 0 20px 70px;
+		padding:0;
+		width:578px;
+	}
+	#wrapperPopup .content-popup{
+		float:left;
+		color:#3e3114;
+		height:auto;
+		font:normal 13px CourierNewBold;
+		margin:0 0 0 70px;
+		width:590px;
+	}
+	ul.list-recomienda{
+		list-style:none;
+		float:left;
+		width:90%;
+		height:auto;
+		margin:0 0 0 50px;
+	}
+		ul.list-recomienda li{
+			float:left;
+			display:inline-block;
+			width:32%;
+			height:auto;
+			padding:0 0 20px 0;
+		}
+		ul.list-recomienda li input{
+			background:url("images/bg-input.jpg") repeat-x top left;
+			border:solid 1px #B2B2B2;
+			color:#313a18;
+			float:left !important;
+			font:normal 16px Arial;
+			height:auto;
+			/*margin:0 0 20px 0;*/
+			text-align:left;
+			width:137px;
+			padding:7px 6px 6px;
+		}
+		a.btnLimpiarRecomienda{
+			background:url("images/btn-limpiar-popup.gif") no-repeat 0 0;
+			float:right;
+			height:46px;
+			width:118px;
+			margin:0 50px 0 0;
+		}
+		a.btnEnviarRecomienda{
+			background:url("images/btn-enviar-popup.gif") no-repeat 0 0;
+			float:right;
+			height:47px;
+			width:117px;
+			margin:0 20px 0 0;
+		}
+
+#wrapperPopupJuego{
+	/*background:url("images/bg-popup-juego.png") no-repeat 0 0 !important;*/
+	float:left;
+	height:519px;
+	width:941px;
+}
+	#mascaraJuego{
+		background:url("images/bg-popup-juego.png") no-repeat 0 0;
+		display:block;
+		height:519px;
+		width:941px;
+		position:absolute;
+		top:0;
+		left:0;
+	}
+		#contadorRetro{
+			font:normal 100px Arial;
+			color:#000;
+			padding:12px 0 0 0;
+			text-align:center;
+			height:136px;
+			width:136px;
+			position:relative;
+			top:224px;
+			left:405px;
+		}
+	#contentJuego{
+		float:left;
+		height:413px;
+		width:941px;
+		margin:94px 0 0 0;
+		position:relative;
+	}
+	#waitJuego{
+		background:url("images/bg-wait-juego.png") no-repeat 0 0;
+		float:left;
+		height:413px;
+		width:941px;
+		position:absolute;
+		top:0;
+		left:0;
+	}
+	#clickGalvez{
+		float:left;
+		height:413px;
+		width:941px;
+		margin:94px 0 0 0;
+		position:absolute;
+		left:0;
+		top:0;
+	}
+		#btnClickGalvez{
+			display:block;
+			width:40px;
+			height:40px;
+			position:absolute;
+		}
+	#mascaraTiempo{
+		background:url("images/bg-reloj.png") no-repeat 0 0;
+		display:block;
+		height:56px;
+		width:95px;
+		position:absolute;
+		top:451px;
+		left:425px;
+	}
+		#txtCiudad,
+		#txtTiempo{
+			float:left;
+			width:100%;
+			height:auto;
+			font:bold 14px Arial;
+			color:#FFF;
+			text-align:center;
+			margin:2px 0 0 0;
+		}
+		#txtTiempo{
+			font-size:33px;
+			margin:-5px 0 0 0;
+		}
+	
+	.cboxCloseJuego{
+		position:absolute !important;
+		width:16px !important;
+		height:15px !important;
+		background:url(images/btn-cerrar-popup-juego.gif) no-repeat 0 0 !important;
+		top:89px !important;
+		right:9px !important;
+	}
+	.cboxClosePopup{
+		position:absolute !important;
+		width:16px !important;
+		height:15px !important;
+		background:url(images/btn-cerrar-popup-juego.gif) no-repeat 0 0 !important;
+		top:42px !important;
+		right:20px !important;
+	}
+
+
+#wrapperPopupPremios, #wrapperPopupRanking{
+	background:url("images/bg-premios.png") no-repeat 0 0 !important;
+	float:left;
+	height:528px;
+	width:516px;
+}
+#wrapperPopupRanking{
+	background:url("images/bg-ranking.png") no-repeat 0 0 !important;
+}
+	.scrollRanking{
+		background:url("images/bg-ranking-list.png") no-repeat 0 0;
+		float:left;
+		width:433px;
+		height:319px;
+		font:normal 14px CourierNewBold;
+		color:#FFF;
+		overflow:auto;
+		padding:0 10px;
+		margin:0 0 0 30px;
+	}
+	ul.list-ranking-tabs{
+		list-style:none;
+		float:left;
+		width:453px;
+		height:29px;
+		margin:150px 0 0 30px;
+	}
+		ul.list-ranking-tabs li{
+			float:left;
+			width:453px;
+			height:29px;
+		}
+		#rankingTab_1{
+			background:url("images/rankingTab_1.png") no-repeat 0 0;
+		}
+		#rankingTab_2{
+			background:url("images/rankingTab_2.png") no-repeat 0 0;
+		}
+		#rankingTab_3{
+			background:url("images/rankingTab_3.png") no-repeat 0 0;
+		}
+		a.btnRankingTodos, a.btnRankingSemanal, a.btnRankingTiempos{
+			float:left;
+			width:83px;
+			height:29px;
+		}
+		a.btnRankingSemanal{
+			width:185px;
+		}
+		a.btnRankingTiempos{
+			width:162px;
+		}
+	ul.list-ranking{
+		list-style:none;
+		float:left;
+		width:405px;
+		height:auto;
+	}
+		ul.list-ranking li{
+			float:left;
+			font:normal 14px CourierNewBold;
+			color:#FFF;
+			height:30px;
+			border-bottom:solid 2px #FFF;
+			padding:10px 0 0 0;
+		}
+			ul.list-ranking li span{
+				font-size:20px;
+			}
+			ul.list-ranking li.li-nombre{ width:129px; }
+			ul.list-ranking li.li-apellidos{ width:182px; }
+			ul.list-ranking li.li-puntaje{ width:94px; }
+
+
+
+
+

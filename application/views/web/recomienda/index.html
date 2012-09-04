@@ -1,0 +1,112 @@
+<script src="<?php echo site_url();?>web/js/jquery.validate.js"></script>
+<script src="<?php echo site_url();?>web/js/jquery.alphanumeric.pack.js"></script>
+<link rel="stylesheet" href="<?php echo site_url();?>web/js/pront/examples.css" />
+<script type="text/javascript" src="<?php echo site_url();?>web/js/pront/jquery-impromptu.js"></script>
+<script>
+$(document).ready(function(){
+	$('#txtNombre_1, #txtNombre_2, #txtNombre_3, #txtNombre_4').alphanumeric({ichars:"0123456789@{}[]()¿?¡!#$%&/*"});
+	$('#txtApellido_1, #txtApellido_2, #txtApellido_3, #txtApellido_4').alphanumeric({ichars:"0123456789@{}[]()¿?¡!#$%&/*"});
+	
+	function valida_fila_1(element){
+
+		var is_required = false;
+		var campos = ["txtNombre_1","txtApellido_1","txtEmail_1"]
+		for (var i = 0;i<campos.length;i++)
+		{
+			if($("#"+campos[i]).val() != "")
+			{
+				is_required = true;
+			}
+		}
+		return is_required
+	}
+	
+	function valida_fila_2(element){
+
+		var is_required = false;
+		var campos = ["txtNombre_2","txtApellido_2","txtEmail_2"]
+		for (var i = 0;i<campos.length;i++)
+		{
+			if($("#"+campos[i]).val() != "")
+			{
+				is_required = true;
+			}
+		}
+		return is_required
+	}
+	
+	function valida_fila_3(element){
+
+		var is_required = false;
+		var campos = ["txtNombre_3","txtApellido_3","txtEmail_3"]
+		for (var i = 0;i<campos.length;i++)
+		{
+			if($("#"+campos[i]).val() != "")
+			{
+				is_required = true;
+			}
+		}
+		return is_required
+	}
+	
+	function valida_fila_4(element){
+
+		var is_required = false;
+		var campos = ["txtNombre_4","txtApellido_4","txtEmail_4"]
+		for (var i = 0;i<campos.length;i++)
+		{
+			if($("#"+campos[i]).val() != "")
+			{
+				is_required = true;
+			}
+		}
+		return is_required
+	}
+	
+	
+	$("#frmRecomienda").validate()
+	
+	$("#txtNombre_1").rules("add", { required: valida_fila_1})
+	$("#txtApellido_1").rules("add", { required: valida_fila_1})
+	$("#txtEmail_1").rules("add", { required: valida_fila_1, email:true})
+	$("#txtNombre_2").rules("add", { required: valida_fila_2})
+	$("#txtApellido_2").rules("add", { required: valida_fila_2})
+	$("#txtEmail_2").rules("add", { required: valida_fila_2, email:true})
+	$("#txtNombre_3").rules("add", { required: valida_fila_3})
+	$("#txtApellido_3").rules("add", { required: valida_fila_3})
+	$("#txtEmail_3").rules("add", { required: valida_fila_3, email:true})
+	$("#txtNombre_4").rules("add", { required: valida_fila_4})
+	$("#txtApellido_4").rules("add", { required: valida_fila_4})
+	$("#txtEmail_4").rules("add", { required: valida_fila_4, email:true})
+	
+	
+
+});
+</script>
+<div id="wrapperPopup">
+	<form id="frmRecomienda">
+		<p>&nbsp;</p>
+		<h1>Recomienda</h1>
+		<div class="content-popup">
+			<ul class="list-recomienda">
+				<li style="padding:0;">Nombres*:</li>
+				<li style="padding:0;">Apellidos*:</li>
+				<li style="padding:0;">Correo*:</li>
+				<li><input id="txtNombre_1" type="text" class="txtRecomienda" name="txtNombre_1" /></li>
+				<li><input id="txtApellido_1" type="text" class="txtRecomienda" name ="txtApellido_1"/></li>
+				<li><input id="txtEmail_1" type="text" class="txtRecomienda" name ="txtEmail_1"/></li>
+				<li><input id="txtNombre_2" type="text" class="txtRecomienda" name="txtNombre_2" /></li>
+				<li><input id="txtApellido_2" type="text" class="txtRecomienda" name ="txtApellido_2"/></li>
+				<li><input id="txtEmail_2" type="text" class="txtRecomienda" name ="txtEmail_2"/></li>
+				<li><input id="txtNombre_3" type="text" class="txtRecomienda" name="txtNombre_3" /></li>
+				<li><input id="txtApellido_3" type="text" class="txtRecomienda" name ="txtApellido_3"/></li>
+				<li><input id="txtEmail_3" type="text" class="txtRecomienda" name ="txtEmail_3"/></li>
+				<li><input id="txtNombre_4" type="text" class="txtRecomienda" name="txtNombre_4" /></li>
+				<li><input id="txtApellido_4" type="text" class="txtRecomienda" name ="txtApellido_4"/></li>
+				<li><input id="txtEmail_4" type="text" class="txtRecomienda" name ="txtEmail_4"/></li>
+			</ul>
+			<a href="javascript:" class="btnLimpiarRecomienda" onclick="cleanForm()"></a>
+			<a href="javascript:" class="btnEnviarRecomienda" onclick="enviarRecomienda()"></a>
+		</div>
+	</form>
+</div>

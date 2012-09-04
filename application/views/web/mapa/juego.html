@@ -1,0 +1,237 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>Buscando a Gálvez</title>
+	<meta name="title" content="Buscando a Gálvez" />
+	<meta name="description" content="" />
+	<meta name="keywords" content="" />
+	<meta name="robots" content="index, follow" />
+	<meta http-equiv="cache-control" content="no-cache" />
+	<link rel="shortcut icon" type="image/x-icon" href="<?php echo site_url();?>web/images/favicon.ico" />
+	<link rel="stylesheet" href="<?php echo site_url();?>web/styles/style.css" />
+	<link rel="stylesheet" href="<?php echo site_url();?>web/js/pront/examples.css" />
+	<script src="<?php echo site_url();?>web/js/jquery-1.4.2.min.js"></script>
+	<script src="<?php echo site_url();?>web/js/jquery.pngFix.js"></script>
+	<script type="text/javascript" src="<?php echo site_url();?>web/js/pront/jquery-impromptu.js"></script>
+	<script>
+		var dominio = '<?php echo site_url();?>';
+	</script>
+	<script src="<?php echo site_url();?>web/js/init.js"></script>
+	<script>
+		$(document).ready(function(){
+			t = setInterval("preload()",1000);
+			
+			var nivel = <?php echo $level - 1;?>;
+			
+			var array_nombre_ciudades = new Array("Lima", "Cusco", "Pucallpa", "Iquitos", "Chiclayo", "Callao");
+			$("#txtCiudad").text(array_nombre_ciudades[nivel]);
+			
+			
+			var array_callao = new Array(
+                                ["<?php echo site_url();?>web/images/callao/Callao-1.jpg","top:81px; left:824px;"],
+                                ["<?php echo site_url();?>web/images/callao/Callao-2.jpg","top:87px; left:516px;"],
+                                ["<?php echo site_url();?>web/images/callao/Callao-3.jpg","top:108px; left:202px;"],
+								["<?php echo site_url();?>web/images/callao/Callao-4.jpg","top:104px; left:396px;"],
+                                ["<?php echo site_url();?>web/images/callao/Callao-5.jpg","top:101px; left:103px;"],
+                                ["<?php echo site_url();?>web/images/callao/Callao-6.jpg","top:67px; left:618px;"],
+								["<?php echo site_url();?>web/images/callao/Callao-7.jpg","top:62px; left:423px;"],
+                                ["<?php echo site_url();?>web/images/callao/Callao-8.jpg","top:89px; left:169px;"],
+                                ["<?php echo site_url();?>web/images/callao/Callao-9.jpg","top:91px; left:624px;"],
+								["<?php echo site_url();?>web/images/callao/Callao-10.jpg","top:110px; left:645px;"],
+                                ["<?php echo site_url();?>web/images/callao/Callao-11.jpg","top:59px; left:448px;"],
+                                ["<?php echo site_url();?>web/images/callao/Callao-12.jpg","top:43px; left:783px;"]
+			);
+			var array_chiclayo = new Array(
+                                ["<?php echo site_url();?>web/images/chiclayo/chiclayo-1.jpg","top:87px; left:308px;"],
+                                ["<?php echo site_url();?>web/images/chiclayo/chiclayo-2.jpg","top:49px; left:639px;"],
+                                ["<?php echo site_url();?>web/images/chiclayo/chiclayo-3.jpg","top:90px; left:151px;"],
+								["<?php echo site_url();?>web/images/chiclayo/chiclayo-4.jpg","top:83px; left:476px;"],
+                                ["<?php echo site_url();?>web/images/chiclayo/chiclayo-5.jpg","top:74px; left:656px;"],
+                                ["<?php echo site_url();?>web/images/chiclayo/chiclayo-6.jpg","top:135px; left:86px;"],
+								["<?php echo site_url();?>web/images/chiclayo/chiclayo-7.jpg","top:50px; left:113px;"],
+                                ["<?php echo site_url();?>web/images/chiclayo/chiclayo-8.jpg","top:96px; left:846px;"],
+                                ["<?php echo site_url();?>web/images/chiclayo/chiclayo-9.jpg","top:64px; left:524px;"],
+								["<?php echo site_url();?>web/images/chiclayo/chiclayo-10.jpg","top:53px; left:696px;"],
+                                ["<?php echo site_url();?>web/images/chiclayo/chiclayo-11.jpg","top:51px; left:883px;"],
+                                ["<?php echo site_url();?>web/images/chiclayo/chiclayo-12.jpg","top:75px; left:257px;"]
+			);
+			var array_cusco = new Array(
+                                ["<?php echo site_url();?>web/images/cusco/cusco-1.jpg","top:134px; left:605px;"],
+                                ["<?php echo site_url();?>web/images/cusco/cusco-2.jpg","top:192px; left:131px;"],
+                                ["<?php echo site_url();?>web/images/cusco/cusco-3.jpg","top:137px; left:562px;"],
+								["<?php echo site_url();?>web/images/cusco/cusco-4.jpg","top:178px; left:119px;"],
+                                ["<?php echo site_url();?>web/images/cusco/cusco-5.jpg","top:232px; left:657px;"],
+                                ["<?php echo site_url();?>web/images/cusco/cusco-6.jpg","top:125px; left:885px;"],
+								["<?php echo site_url();?>web/images/cusco/cusco-7.jpg","top:129px; left:520px;"],
+                                ["<?php echo site_url();?>web/images/cusco/cusco-8.jpg","top:231px; left:11px;"],
+                                ["<?php echo site_url();?>web/images/cusco/cusco-9.jpg","top:187px; left:341px;"],
+								["<?php echo site_url();?>web/images/cusco/cusco-10.jpg","top:157px; left:769px;"],
+                                ["<?php echo site_url();?>web/images/cusco/cusco-11.jpg","top:216px; left:210px;"],
+                                ["<?php echo site_url();?>web/images/cusco/cusco-12.jpg","top:149px; left:792px;"]
+			);
+			var array_lima = new Array(
+                                ["<?php echo site_url();?>web/images/lima/lima-1.jpg","top:73px; left:446px;"],
+                                ["<?php echo site_url();?>web/images/lima/lima-2.jpg","top:96px; left:836px;"],
+                                ["<?php echo site_url();?>web/images/lima/lima-3.jpg","top:56px; left:465px;"],
+								["<?php echo site_url();?>web/images/lima/lima-4.jpg","top:35px; left:217px;"],
+                                ["<?php echo site_url();?>web/images/lima/lima-5.jpg","top:31px; left:528px;"],
+                                ["<?php echo site_url();?>web/images/lima/lima-6.jpg","top:92px; left:60px;"],
+								["<?php echo site_url();?>web/images/lima/lima-7.jpg","top:135px; left:221px;"],
+                                ["<?php echo site_url();?>web/images/lima/lima-8.jpg","top:43px; left:459px;"],
+                                ["<?php echo site_url();?>web/images/lima/lima-9.jpg","top:43px; left:459px;"], /*"top:18px; left:762px;"], copia 8*/ 
+								["<?php echo site_url();?>web/images/lima/lima-10.jpg","top:53px; left:825px;"],
+                                ["<?php echo site_url();?>web/images/lima/lima-11.jpg","top:92px; left:515px;"],
+                                ["<?php echo site_url();?>web/images/lima/lima-12.jpg","top:99px; left:318px;"]
+			);
+			var array_iquitos = new Array(
+                                ["<?php echo site_url();?>web/images/iquitos/iquitos-1.jpg","top:75px; left:477px;"],
+                                ["<?php echo site_url();?>web/images/iquitos/iquitos-2.jpg","top:58px; left:831px;"],
+                                ["<?php echo site_url();?>web/images/iquitos/iquitos-3.jpg","top:47px; left:307px;"],
+								["<?php echo site_url();?>web/images/iquitos/iquitos-4.jpg","top:58px; left:492px;"],
+                                ["<?php echo site_url();?>web/images/iquitos/iquitos-5.jpg","top:47px; left:295px;"],
+                                ["<?php echo site_url();?>web/images/iquitos/iquitos-6.jpg","top:54px; left:869px;"],
+								["<?php echo site_url();?>web/images/iquitos/iquitos-7.jpg","top:30px; left:379px;"],
+                                ["<?php echo site_url();?>web/images/iquitos/iquitos-8.jpg","top:23px; left:823px;"],
+                                ["<?php echo site_url();?>web/images/iquitos/iquitos-9.jpg","top:32px; left:117px;"],
+								["<?php echo site_url();?>web/images/iquitos/iquitos-10.jpg","top:29px; left:488px;"],
+                                ["<?php echo site_url();?>web/images/iquitos/iquitos-11.jpg","top:54px; left:701px;"],
+                                ["<?php echo site_url();?>web/images/iquitos/iquitos-12.jpg","top:78px; left:348px;"]
+			);
+			var array_pucallpa = new Array(
+                                ["<?php echo site_url();?>web/images/pucallpa/pucallpa-1.jpg","top:174px; left:9px;"],
+                                ["<?php echo site_url();?>web/images/pucallpa/pucallpa-2.jpg","top:155px; left:93px;"],
+                                ["<?php echo site_url();?>web/images/pucallpa/pucallpa-3.jpg","top:137px; left:901px;"],
+								["<?php echo site_url();?>web/images/pucallpa/pucallpa-4.jpg","top:147px; left:343px;"],
+                                ["<?php echo site_url();?>web/images/pucallpa/pucallpa-5.jpg","top:154px; left:784px;"],
+                                ["<?php echo site_url();?>web/images/pucallpa/pucallpa-6.jpg","top:180px; left:182px;"],
+								["<?php echo site_url();?>web/images/pucallpa/pucallpa-7.jpg","top:145px; left:713px;"],
+                                ["<?php echo site_url();?>web/images/pucallpa/pucallpa-8.jpg","top:147px; left:168px;"],
+                                ["<?php echo site_url();?>web/images/pucallpa/pucallpa-9.jpg","top:137px; left:672px;"],
+								["<?php echo site_url();?>web/images/pucallpa/pucallpa-10.jpg","top:145px; left:260px;"],
+                                ["<?php echo site_url();?>web/images/pucallpa/pucallpa-11.jpg","top:156px; left:338px;"],
+                                ["<?php echo site_url();?>web/images/pucallpa/pucallpa-12.jpg","top:181px; left:528px;"]
+			);
+			
+			var array_ciudades = new Array(array_lima, array_cusco, array_pucallpa, array_iquitos, array_chiclayo, array_callao);
+			
+			var ciudad = array_ciudades[nivel];
+			
+			var imagen = ciudad[Math.floor(Math.random()*12)];
+			
+			$("#imgCiudad").attr("src",imagen[0]);
+			$("#btnClickGalvez").attr("style",imagen[1]);
+			$("#btnClickGalvez").hide();
+			// clic Galvez
+			$('#btnClickGalvez').click(function(){
+				clearInterval(t);
+				var tiempo_tmp = "00:"+$("#txtTiempo").text();
+                                var token_tmp = '<?php echo $token?>'
+				$.post(dominio+"mapa/update_juego",{ tiempo:tiempo_tmp, token:token_tmp },function(data){
+				//$.post(dominio+"mapa/update_juego",{ tiempo:'00:00:00' },function(data){
+					var obj = $.parseJSON(data);
+					if(obj.validacion == "Tiempo no permitido" || obj.validacion =="Juego no permitido"){
+						$.prompt(obj.validacion, { callback:function(){
+							window.parent.location.reload();
+						}});
+					}else{
+						//
+						parent.$("#cboxClose").hide();
+						$.prompt("Bien!, la hiciste.", { callback:function(){
+							$.post(dominio+"mapa/acumulado_nivel",function(data){
+								if(data){
+									//alert(obj[0].time_resultado);
+									var obj = $.parseJSON(data);
+									loginFacebook2(nivel,obj[0].time_resultado);
+								}else{
+									loginFacebook2(nivel,tiempo_tmp);
+								}
+							});
+						}});
+						//
+					}
+				});
+				// aca estaba el codigo
+			});
+		});
+		
+		var t;
+		var segundos = 0;
+		var minutos = 0;
+		
+		function preload(){
+			var cont = parseInt($("#contadorRetro").text());
+			cont--;
+			$("#contadorRetro").text(cont);
+			if(cont == 0){
+				clearInterval(t);
+				$("#waitJuego").fadeOut(1000);
+				crono();
+				t = setInterval("crono()",1000);
+				$("#contadorRetro").fadeOut(1000, function(){
+					//crono();
+					//t = setInterval("crono()",1000);
+					$("#btnClickGalvez").show();
+				});
+			}
+		}
+		
+		function crono(){
+			segundos++;
+			if(segundos == 60){
+				segundos = 0;
+				minutos++;
+			}
+			var segundos_str = (segundos.toString().length == 1)?"0"+segundos.toString():segundos.toString();
+			var minutos_str = (minutos.toString().length == 1)?"0"+minutos.toString():minutos.toString();
+			var tiempo = minutos_str+":"+segundos_str;
+			$("#txtTiempo").text(tiempo);
+		}
+		
+		
+	</script>
+</head>
+<body>
+<div id="fb-root"></div>
+<script>
+  window.fbAsyncInit = function() {
+    FB.init({appId: '185447694872331', status: true, cookie: true,
+             xfbml: true});
+			 
+	 FB.getLoginStatus(function(response) {
+		if (response.session) {
+			// logged in and connected user, someone you know
+			//alert("YA ESTA LOGUEADO");
+			//shareFacebook();
+		}
+	});
+	
+	FB.Event.subscribe('auth.login', function(response) {
+		//shareFacebookLevel(nivel,tiempo);
+	});
+  };
+  (function() {
+    var e = document.createElement('script'); e.async = true;
+    e.src = document.location.protocol +
+      '//connect.facebook.net/en_US/all.js';
+    document.getElementById('fb-root').appendChild(e);
+  }());
+</script>
+	<div id="wrapperPopupJuego">
+		<div id="contentJuego">
+			<img id="imgCiudad" src="" width="941" height="413" style="" alt="" />
+			<div id="waitJuego" style=""></div>
+		</div>
+		<div id="mascaraJuego">
+			<div id="contadorRetro">5</div>
+		</div>
+		<div id="clickGalvez">
+			<div id="btnClickGalvez" style=""></div>
+		</div>
+		<div id="mascaraTiempo">
+			<span id="txtCiudad"></span>
+			<span id="txtTiempo">00:00</span>
+		</div>
+	</div>
+</body>
+</html>

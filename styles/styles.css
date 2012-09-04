@@ -1,0 +1,26 @@
+@charset "utf-8";
+/* CSS Document */
+
+body{
+	margin: 0px;
+}
+
+#maq_alineacion{
+	margin: 0px auto;
+}
+
+#maq_cabecera{
+	height: 110px;
+}
+
+#maq_principal{
+	height: auto;
+	padding: 14px 20px 14px 20px;
+	background-color: #f7f7f1;
+}
+
+#maq_pie{
+	height: 50px;
+	position: relative;
+	margin-bottom: 20px;
+}

@@ -1,0 +1,76 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>Buscando a Gálvez</title>
+	<meta name="title" content="Buscando a Gálvez" />
+	<meta name="description" content="" />
+	<meta name="keywords" content="" />
+	<meta name="robots" content="index, follow" />
+	<meta http-equiv="cache-control" content="no-cache" />
+	<link rel="shortcut icon" type="image/x-icon" href="<?php echo site_url();?>web/images/favicon.ico" />
+	<link rel="stylesheet" href="<?php echo site_url();?>web/styles/style.css" />
+	<link rel="stylesheet" href="<?php echo site_url();?>web/styles/colorbox.css" />
+	<script src="<?php echo site_url();?>web/js/jquery-1.4.2.min.js"></script>
+	<script src="<?php echo site_url();?>web/js/jquery.pngFix.js"></script>
+	<script src="<?php echo site_url();?>web/js/jquery.colorbox.js"></script>
+	<script>
+		var dominio = '<?php echo site_url();?>';
+	</script>
+	<script src="<?php echo site_url();?>web/js/init.js"></script>
+	<script>
+		$(document).ready(function(){
+			var array_ciudad = new Array(
+                                ["mapa-final","descrip-final"],
+                                ["mapa-lima","descrip-lima"],
+                                ["mapa-cusco","descrip-cusco"],
+                                ["mapa-pucallpa","descrip-pucallpa"],
+                                ["mapa-iquitos","descrip-iquitos"],
+                                ["mapa-chiclayo","descrip-chiclayo"],
+                                ["mapa-callao","descrip-callao"]
+                                );
+			//alert(array_ciudad[0][0]);
+			var s_guia_mapa = array_ciudad[<?php echo $level ;?>][0];
+			var s_ciudad_descrip = array_ciudad[<?php echo $level ;?>][1];
+			$("#guia-mapa").addClass(s_guia_mapa);
+			$("#ciudad-descrip").addClass(s_ciudad_descrip);
+		});
+	</script>
+</head>
+<body class="bg-ciudades">
+	<ul id="nav" class="nav2">
+		<li><a href="javascript:" class="btn-nav-cerrarsesion"></a></li>
+		<li><a href="javascript:" class="btn-nav-premios"></a></li>
+		<li><a href="javascript:" class="btn-nav-ranking"></a></li>
+		<li><a href="javascript:" class="btn-nav-recomienda"></a></li>
+		<li><a href="javascript:" class="btn-nav-instrucciones"></a></li>
+		<li><a href="javascript:" class="btn-nav-basespromocion"></a></li>
+	</ul>
+	<div id="logo-buscando-galvez"></div>
+	<!-- -->
+	<div id="mapa">
+		<div id="guia-mapa" class=""></div>
+	</div>
+	<div id="ciudad-descrip" class="">
+		<?php if($level == 0 ){ ?>
+		<div id="contentTime">
+			<?php
+			if ($level == 0){
+				echo substr($reseultado,3,2)."'".substr($reseultado,6,2)."''";
+			}
+			?>
+		</div>
+		<a href="javascript:" class="btn-mejora-tiempo"></a>
+		<a href="javascript:" class="btn-ver-ranking"></a>
+		<?php }else{ ?>
+		<a href="javascript:" class="btn-empieza-juego"></a>
+		<?php } ?>
+	</div>
+	<!-- -->
+	<div id="elementos-militares"></div>
+	<div id="min">
+		<img src="<?php echo site_url();?>web/images/img-min.png" width="10" height="108" alt="MIN-2011-0403703" />
+	</div>
+	<div id="footer"></div>
+</body>
+</html>

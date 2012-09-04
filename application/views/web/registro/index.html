@@ -1,0 +1,235 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>Buscando a Gálvez</title>
+	<meta name="title" content="Buscando a Gálvez" />
+	<meta name="description" content="" />
+	<meta name="keywords" content="" />
+	<meta name="robots" content="index, follow" />
+	<meta http-equiv="cache-control" content="no-cache" />
+	<link rel="shortcut icon" type="image/x-icon" href="<?php echo site_url();?>web/images/favicon.ico" />
+	<link rel="stylesheet" href="<?php echo site_url();?>web/styles/style.css" />
+	<link rel="stylesheet" href="<?php echo site_url();?>web/styles/colorbox.css" />
+	<link rel="Stylesheet" href="<?php echo site_url();?>web/styles/jquery-ui.css" />
+	<link rel="stylesheet" href="<?php echo site_url();?>web/js/pront/examples.css" />
+	<script src="<?php echo site_url();?>web/js/jquery-1.4.2.min.js"></script>
+	<script src="<?php echo site_url();?>web/js/jquery.pngFix.js"></script>
+	<script src="<?php echo site_url();?>web/js/jquery-ui.min.js"></script>
+	<script src="<?php echo site_url();?>web/js/ui.selectmenu.js"></script>
+	<script src="<?php echo site_url();?>web/js/jquery.colorbox.js"></script>
+	<script src="<?php echo site_url();?>web/js/jquery.validate.js"></script>
+	<script src="<?php echo site_url();?>web/js/jquery.alphanumeric.pack.js"></script>
+	<script>
+		var dominio = '<?php echo site_url();?>';
+		$(document).ready(function(){
+			//$('#cboDemo1, #cboDemo2, #cboDemo3, #cboDemo4').selectmenu({style:'dropdown'});
+			
+			
+			$('#TxtNombre, #TxtApellidoPat, #TxtApellidoMat').alphanumeric({ichars:"0123456789@{}[]()¿?¡!#$%&/*"});
+			$('#TxtDireccion').alphanumeric({ichars:"@{}[]()¿?¡!$%&/*"});
+			$('#TxtDia, #TxtMes, #TxtAnio, #TxtDoc, #TxtTelefonoCasa, #TxtCelular').numeric();
+			
+			jQuery.validator.addMethod("nombre_valido", function(value, element) {
+				var match = /^([a-zA-Z\ñ\Ñ\á\é\í\ó\ú]+ ?)*$/.test(element.value);
+				return this.optional(element) || match
+			}, "");
+			
+			jQuery.validator.addMethod("direccion_valido", function(value, element) {
+				var match = /^([a-zA-Z0-9\.\,\°\ñ\Ñ\á\é\í\ó\ú\-\#]+ ?)*$/.test(element.value);
+				return this.optional(element) || match
+			}, "");
+
+			
+			$("#frmRegistro").validate({
+				rules:{
+					TxtNombre:{
+                        required: true,
+                        nombre_valido : true
+                    },
+					TxtApellidoPat:{
+                        required: true,
+                        nombre_valido : true
+                    },
+					TxtApellidoMat:{
+                        required: true,
+                        nombre_valido : true
+                    },
+					TxtDia:{
+						required: true,
+						digits: true,
+						rangelength: [1,2]
+					},
+					TxtMes:{
+						required: true,
+						digits: true,
+						rangelength: [1,2]
+					},
+					TxtAnio:{
+						required: true,
+						digits: true,
+						rangelength: [4,4]
+					},
+					TxtDoc:{
+						required: true,
+						digits:true,
+						rangelength: [8,8]
+					},
+					TxtTelefonoCasa:{
+						required: true,
+						digits:true,
+						rangelength: [6,9]
+					},
+					TxtCelular:{
+						required: false
+					},
+					cboCelular:{
+						required: false
+					},
+					cboDepartamento:{
+						required: true
+					},
+					cboProvincia:{
+						required: true
+					},
+					cboDistrito:{
+						required: true
+					},
+					TxtDireccion:{
+						required: true,
+						rangelength: [2,200],
+						direccion_valido : true
+					},
+					TxtMail:{
+						required: true,
+						email: true,
+						rangelength: [2,200]
+					}
+				}
+			});
+		});
+		
+		/*function validaFecha(){
+			var tmp = parseInt($("#TxtDia").val()) + parseInt($("#TxtMes").val()) + parseInt($("#TxtAnio").val());
+			if(tmp == 0){
+				
+			}
+			//TxtDia
+			//TxtMes
+			//TxtAnio
+		}*/
+	</script>
+	<script type="text/javascript" src="<?php echo site_url();?>web/js/pront/jquery-impromptu.js"></script>
+	<script src="<?php echo site_url();?>web/js/init.js"></script>
+	<script src="<?php echo site_url();?>web/js/ubigeo.js"></script>
+
+</head>
+<body class="bg-home">
+	<ul id="nav">
+		<!--<li><a href="javascript:" class="btn-nav-cerrarsesion"></a></li>-->
+		<li><a href="javascript:" class="btn-nav-recomienda"></a></li>
+		<li><a href="javascript:" class="btn-nav-instrucciones"></a></li>
+		<li><a href="javascript:" class="btn-nav-basespromocion"></a></li>
+	</ul>
+	<!-- -->
+	<div id="logo"></div>
+	<form id="frmRegistro">
+		<div id="contentRegistroForm">
+			<img src="<?php site_url();?>web/images/img-registro-cabecera.png" width="336" height="34" alt="Registro" />
+			<ul class="contentRegistro">
+				<li><input id="TxtNombre" name="TxtNombre" type="text" class="inputText" value="Nombre*" onfocus="if(this.value=='Nombre*') this.value='';" onblur="if(this.value=='') this.value='Nombre*';" /></li>
+				<li><input id="TxtApellidoPat" name="TxtApellidoPat" type="text" class="inputText" value="Apellido Paterno*" onfocus="if(this.value=='Apellido Paterno*') this.value='';" onblur="if(this.value=='') this.value='Apellido Paterno*';" /></li>
+				<li><input id="TxtApellidoMat" name="TxtApellidoMat" type="text" class="inputText" value="Apellido Materno*" onfocus="if(this.value=='Apellido Materno*') this.value='';" onblur="if(this.value=='') this.value='Apellido Materno*';" /></li>
+				<li><label><strong>Fecha de Nacimiento</strong></label></li>
+				<?php
+
+				if(isset($fecha)){
+					$val_tmp = explode("-",$fecha);
+					$val_dia = $val_tmp[2];
+					$val_mes = $val_tmp[1];
+					$val_anio = $val_tmp[0];
+				}else{
+					$val_dia = "DD";
+					$val_mes = "MM";
+					$val_anio = "AAAA";
+				}
+				?>
+				<li>
+					<input id="TxtDia" name="TxtDia" type="text" class="inputText inputTextDia" value="<?php echo $val_dia ;?>" maxlength="2" onfocus="if(this.value=='DD') this.value='';" onblur="if(this.value=='') this.value='DD';" />
+					<input id="TxtMes" name="TxtMes" type="text" class="inputText inputTextMes" value="<?php echo $val_mes ;?>" maxlength="2" onfocus="if(this.value=='MM') this.value='';" onblur="if(this.value=='') this.value='MM';" />
+					<input id="TxtAnio" name="TxtAnio" type="text" class="inputText inputTextAnio" value="<?php echo $val_anio ;?>" maxlength="4" onfocus="if(this.value=='AAAA') this.value='';" onblur="if(this.value=='') this.value='AAAA';" />
+				</li>
+				<?php
+				if(isset($dni)){
+					$val_dni=$dni;
+				}else{
+					$val_dni="DNI*";
+				}
+				?>
+				<li><input id="TxtDoc" name="TxtDoc" type="text" class="inputText" value="<?php echo $val_dni ;?>" maxlength="8" onfocus="if(this.value=='DNI*') this.value='';" onblur="if(this.value=='') this.value='DNI*';" /></li>
+				<li><input id="optMasculino" name="Sexo" type="radio" checked="checked" value="Masculino" /><label for="chkMasculino">&nbsp;<strong>Masculino</strong>*</label></li>
+				<li><input id="optFemenino" name="Sexo" type="radio" value="Femenino" /><label for="chkFemenino">&nbsp;<strong>Femenino</strong>*</label></li>
+				<li><input id="TxtTelefonoCasa" name="TxtTelefonoCasa" type="text" class="inputText" value="Teléfono fijo*" maxlength="9" onfocus="if(this.value=='Teléfono fijo*') this.value='';" onblur="if(this.value=='') this.value='Teléfono fijo*';" /></li>
+				<li><input id="TxtCelular" name="TxtCelular" type="text" class="inputText" value="Celular" maxlength="9" onfocus="if(this.value=='Celular') this.value='';" onblur="if(this.value=='') this.value='Celular';" /></li>
+			</ul>
+			<input id="cboTipoDoc" name="cboTipoDoc" type="hidden" value="1" />
+			<ul class="contentRegistro">
+				<li>
+					<select id="cboDemo1" name="cboCelular" class="inputSelect ui-selectmenu">
+						<option value="">Operador</option>
+						<option value="1">Movistar</option>
+						<option value="3">Claro</option>
+						<option value="4">Nextel</option>
+					</select>
+				</li>
+				<li>
+					<select id="cboDepartamento" name="cboDepartamento"  class="inputSelect ui-selectmenu" >
+						<option value="">No seleccionado(*)</option>
+						<?php foreach($departamento as $departamento):
+								$select  = $departamento->id == '15'?'selected':'';
+						 ?>
+						<option value="<?php echo $departamento->id;?>" <?php echo $select;?>><?php echo $departamento->name;?></option>
+						<?php endforeach;?>
+					</select>
+				</li>
+				<li>
+					<select id="cboProvincia" name="cboProvincia" class="inputSelect ui-selectmenu">
+						<option value="">No seleccionado(*)</option>
+							<?php
+								foreach($provincia as $provincia):
+									$select  = $provincia->id == '1501'?'selected':'';
+								?>
+						<option value="<?php echo $provincia->id;?>" <?php echo $select;?>><?php echo $provincia->name;?></option>
+							<?php endforeach;?>
+					</select>
+				</li>
+				<li>
+					<select id="cboDistrito" name="cboDistrito" class="inputSelect ui-selectmenu">
+						<option value="">No seleccionado(*)</option>
+							 <?php foreach($distrito as $distrito):
+									$select  = $distrito->id == '150101'?'selected':'';
+							 ?>
+						<option value="<?php echo $distrito->id;?>" <?php echo $select;?>><?php echo $distrito->name;?></option>
+						<?php endforeach;?>
+					</select>
+				</li>
+				<li><input id="TxtDireccion" name="TxtDireccion" type="text" class="inputText" value="Dirección*" onfocus="if(this.value=='Dirección*') this.value='';" onblur="if(this.value=='') this.value='Dirección*';" /></li>
+				<li><input id="TxtMail" name="TxtMail" type="text" class="inputText" value="Correo electrónico*" onfocus="if(this.value=='Correo electrónico*') this.value='';" onblur="if(this.value=='') this.value='Correo electrónico*';" /></li>
+				<li>&nbsp;</li>
+				<li><input id="Txt_terminos" name="Txt_terminos" type="checkbox" /><label for="chkTerminos">&nbsp;Acepto haber leído los <a href="javascript:" class="btnTerminos">Términos y Condiciones</a></label></li>
+				<li>&nbsp;</li>
+				<li>* Campos obligatorios</li>
+			</ul>
+			<img src="<?php echo site_url();?>web/images/img-registro-pie.png" width="336" height="19" alt="" />
+			<a href="javascript:" class="btnGuardar" onclick="enviarRegistro()"></a>
+			<!--<a href="javascript:" class="btnLimpiar" onclick="cleanForm()"></a>-->
+			<input class="btnLimpiar" type="reset" />
+		</div>
+	</form>
+	<!-- -->
+	<div id="min">
+		<img src="<?php echo site_url();?>web/images/img-min.png" width="10" height="108" alt="MIN-2011-0403703" />
+	</div>
+	<div id="footer"></div>
+</body>
+</html>

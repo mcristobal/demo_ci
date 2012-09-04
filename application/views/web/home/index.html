@@ -1,0 +1,112 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>Buscando a Gálvez</title>
+	<meta name="title" content="Buscando a Gálvez" />
+	<meta name="description" content="" />
+	<meta name="keywords" content="" />
+	<meta name="robots" content="index, follow" />
+	<meta http-equiv="cache-control" content="no-cache" />
+	<link rel="shortcut icon" type="image/x-icon" href="<?php echo site_url();?>web/images/favicon.ico" />
+	<link rel="stylesheet" href="<?php echo site_url();?>web/styles/style.css" />
+	<link rel="stylesheet" href="<?php echo site_url();?>web/styles/colorbox.css" />
+	<link rel="stylesheet" href="<?php echo site_url();?>web/js/pront/examples.css" />
+	<script src="<?php echo site_url();?>web/js/jquery-1.4.2.min.js"></script>
+	<script src="<?php echo site_url();?>web/js/jquery.pngFix.js"></script>
+	<script src="<?php echo site_url();?>web/js/jquery.colorbox.js"></script>
+    <script>
+		var dominio = '<?php echo site_url();?>';
+	</script>
+	<script src="<?php echo site_url();?>web/js/jquery.validate.js"></script>
+	<script src="<?php echo site_url();?>web/js/jquery.alphanumeric.pack.js"></script>
+	<script type="text/javascript" src="<?php echo site_url();?>web/js/pront/jquery-impromptu.js"></script>
+	<script src="<?php echo site_url();?>web/js/init.js"></script>
+	<script>
+		$(document).ready(function(){
+			$('#txtDia, #txtMes, #txtAnio, #txtDni').numeric();
+			$("#frmLogin").validate({
+				rules:{
+					txtDia:{
+						required: true,
+						digits:true,
+						rangelength: [1,2]
+					},
+					txtMes:{
+						required: true,
+						digits:true,
+						rangelength: [1,2]
+					},
+					txtAnio:{
+						required: true,
+						digits:true,
+						rangelength: [4,4]
+					},
+					txtDni:{
+						required: true,
+						digits:true,
+						rangelength: [8,8]
+					}
+				}
+			});
+		});
+	</script>
+</head>
+<body class="bg-home">
+<div id="fb-root"></div>
+<script>
+  window.fbAsyncInit = function() {
+    FB.init({appId: '185447694872331', status: true, cookie: true,
+             xfbml: true});
+			 
+	 FB.getLoginStatus(function(response) {
+		if (response.session) {
+			// logged in and connected user, someone you know
+			//alert("YA ESTA LOGUEADO");
+			//shareFacebook();
+		}
+	});
+	
+	FB.Event.subscribe('auth.login', function(response) {
+		shareFacebook();
+	});
+  };
+  (function() {
+    var e = document.createElement('script'); e.async = true;
+    e.src = document.location.protocol +
+      '//connect.facebook.net/en_US/all.js';
+    document.getElementById('fb-root').appendChild(e);
+  }());
+</script>
+	<ul id="nav">
+		<!--<li><a href="javascript:" class="btn-nav-cerrarsesion"></a></li>-->
+		<li><a href="javascript:" class="btn-nav-recomienda"></a></li>
+		<li><a href="javascript:" class="btn-nav-instrucciones"></a></li>
+		<li><a href="javascript:" class="btn-nav-basespromocion"></a></li>
+	</ul>
+	<!-- -->
+	<div id="content-home">
+		<form id="frmLogin">
+			<ul id="txtLogin">
+				<li><input id="txtDia" name="txtDia" type="text" class="inputDiaMes" maxlength="2" value="DD" onkeyup="inputFocus('txtDia','txtMes',2)" onfocus="if(this.value=='DD') this.value='';" onblur="if(this.value=='') this.value='DD';" /></li>
+				<li><input id="txtMes" name="txtMes" type="text" class="inputDiaMes" maxlength="2" value="MM" onkeyup="inputFocus('txtMes','txtAnio',2)" onfocus="if(this.value=='MM') this.value='';" onblur="if(this.value=='') this.value='MM';" /></li>
+				<li><input id="txtAnio" name="txtAnio" type="text" class="inputAnio" maxlength="4" value="AAAA" onkeyup="inputFocus('txtAnio','txtDni',4)" onfocus="if(this.value=='AAAA') this.value='';" onblur="if(this.value=='') this.value='AAAA';" /></li>
+				<li class="contentDni"><input id="txtDni" name="txtDni" type="text" class="inputDni" maxlength="8" onkeyup="if(event.keyCode == '13'){ enviarLogin(); }" value="" /></li>
+				<li class="contentAll"><a href="javascript:" onclick="enviarLogin()" class="btnIngresar"></a></li>
+				<li class="contentAll"><a href="javascript:" class="btnCompartirFb" onclick="loginFacebook()"></a></li>
+			</ul>
+		</form>
+	</div>
+	<!-- -->
+	<div id="min">
+            <img src="<?php echo site_url();?>web/images/img-min.png" width="10" height="108" alt="MIN-2011-0403703" />
+	</div>
+	<div id="demo">
+		<div class="btn-demo-juega"><a href="javascript:"></a></div>
+		<div class="btn-demo-recomienda"><a href="javascript:"></a></div>
+		<div class="btn-demo-premios"><a href="javascript:"></a></div>
+		<div class="btn-demo-ranking"><a href="javascript:"></a></div>
+	</div>
+	<div id="footer"></div>
+</body>
+</html>

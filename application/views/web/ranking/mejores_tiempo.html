@@ -1,0 +1,41 @@
+<div id="wrapperPopupRanking">
+	<?php if (count($ranking)>0){?>
+		<ul class="list-ranking-tabs">
+			<li id="rankingTab_1" class="not-visible">
+				<a href="<?php echo site_url();?>ranking" class="btnRankingTodos"></a>
+				<a href="<?php echo site_url();?>ranking/ranking_semanal" class="btnRankingSemanal"></a>
+				<a href="<?php echo site_url();?>ranking/mejores_tiempo" class="btnRankingTiempos"></a>
+			</li>
+			<li id="rankingTab_2" class="not-visible">
+				<a href="<?php echo site_url();?>ranking" class="btnRankingTodos"></a>
+				<a href="<?php echo site_url();?>ranking/ranking_semanal" class="btnRankingSemanal"></a>
+				<a href="<?php echo site_url();?>ranking/mejores_tiempo" class="btnRankingTiempos"></a>
+			</li>
+			<li id="rankingTab_3">
+				<a href="<?php echo site_url();?>ranking" class="btnRankingTodos"></a>
+				<a href="<?php echo site_url();?>ranking/ranking_semanal" class="btnRankingSemanal"></a>
+				<a href="<?php echo site_url();?>ranking/mejores_tiempo" class="btnRankingTiempos"></a>
+			</li>
+		</ul>
+		<div class="scrollRanking">
+			<ul class="list-ranking">
+				<li class="li-nombre"><span>Nombre</span></li>
+				<li class="li-apellidos"><span>Apellidos</span></li>
+				<li class="li-puntaje"><span>Tiempo</span></li>
+				<?php
+					$x = 1;
+					foreach($ranking as $key => $ranking):                        
+						$nom = explode(' ',ucfirst($ranking->nombres));
+					?>
+						<li class="li-nombre"> <?php echo $x.". ".$nom[0];?></li>
+						<li class="li-apellidos"><?php echo ucfirst($ranking->apellido_paterno);?></li>
+						<li class="li-puntaje"><?php echo $ranking->time_resultado;?></li>
+				<?php 
+					$x = $x+1;
+				endforeach; ?>
+			</ul>
+		</div>
+	<?php }else{?>
+	<p>Hasta el momento no tenemos participantes registrados en el Ranking.</p>
+	<?php } ?>
+</div>

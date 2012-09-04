@@ -1,0 +1,138 @@
+body{
+	margin: 0px;
+	background: url(images/fondo_body.gif) repeat;
+}
+
+#maq_alineacion{
+	margin: 0px auto;
+}
+
+#maq_cabecera{
+	height: 50px;
+}
+
+#maq_principal{
+	height: auto;
+	padding: 14px 20px 14px 20px;
+	background-color: #f7f7f1;
+}
+
+#maq_pie{
+	height: 50px;
+	position: relative;
+	margin-bottom: 20px;
+}
+
+#maq_pie #web_logo_cms{
+	width: auto;
+	height: 35px;
+	position: absolute;
+	top: 0px;
+	right: 20px;
+}
+
+#maq_pie #web_logo_cms span{
+	font: bold 11px Tahoma;
+	color: #7a7a78;
+	margin-right: 5px;
+	vertical-align: middle;
+}
+
+#maq_pie #web_logo_cms img{
+	vertical-align: middle;
+}
+
+
+/* Login */
+
+.login{
+	width: 456px;
+	padding-top: 100px;
+}
+
+.login #maq_cabecera{
+	width: 456px;
+	background: url(images/fondo_cabecera_login.png) no-repeat;
+}
+
+.login #maq_cabecera h3{
+	font: bold 14px/45px Tahoma;
+	color: #8a6f6f;
+	text-align: center;
+	margin: 0px;
+}
+
+.login #maq_principal{
+	width: 416px;
+}
+
+.login #maq_pie{
+	width: 456px;
+	background: url(images/fondo_pie_login.png) no-repeat;
+}
+
+
+/* General */
+
+.general{
+	width: 960px;
+	padding-top: 20px;
+}
+
+.general #maq_cabecera{
+	width: 960px;
+	height: 50px;
+	position: relative;
+	background: url(images/fondo_cabecera_general.png) no-repeat;
+}
+
+/*.general #maq_cabecera img{
+	padding-top: 16px;
+	margin: 0px auto;
+	display: block;
+}*/
+
+.general #maq_cabecera h3#usuario{
+	font: bold 14px/45px Tahoma;
+	color: #8a6f6f;
+	padding-left: 30px;
+	margin: 0px;
+	position: absolute;
+	top: 0px;
+	left: 20px;
+	background: url(images/icono_usuario.gif) no-repeat left 10px;
+}
+
+.general #maq_cabecera h3#usuario span{
+	font-weight: normal;
+	color: #ffffff;
+}
+
+.general #maq_cabecera a#logout{
+	font: bold 14px/45px Tahoma;
+	color: #8a6f6f;
+	padding-right: 30px;
+	margin: 0px;
+	text-decoration:none;
+	position: absolute;
+	top: 0px;
+	right: 20px;
+	background: url(images/icono_logout.gif) no-repeat right 10px;
+}
+
+.general #maq_cabecera a#logout:hover{
+	text-decoration:none;
+	color: #ffffff;
+}
+
+.general #maq_principal{
+	width: 920px;
+}
+
+.general #maq_pie{
+	width: 960px;
+	background: url(images/fondo_pie_general.png) no-repeat;
+}
+
+
+

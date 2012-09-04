@@ -1,0 +1,24 @@
+<div id="wrapperPopupRanking">
+    <div class="scrollRanking">
+        <?php if (count($ranking)>0){?>
+            <ul class="list-ranking">
+                <li class="li-nombre"><span>Nombre</span></li>
+                <li class="li-apellidos"><span>Apellidos</span></li>
+                <li class="li-puntaje"><span>Tiempo</span></li>
+                <?php
+                    $x = 1;
+                    foreach($ranking as $key => $ranking):                        
+                        $nom = explode(' ',ucfirst($ranking->nombres));
+                    ?>
+                        <li class="li-nombre"> <?php echo $x.". ".$nom[0];?></li>
+                        <li class="li-apellidos"><?php echo ucfirst($ranking->apellido_paterno);?></li>
+                        <li class="li-puntaje"><?php echo $ranking->time_resultado;?></li>
+                <?php 
+                    $x = $x+1;
+                endforeach; ?>
+            </ul>
+        <?php }else{?>
+        <p>Hasta el momento no tenemos participantes registrados en el Ranking. </p>
+        <?php } ?>
+    </div>
+</div>
